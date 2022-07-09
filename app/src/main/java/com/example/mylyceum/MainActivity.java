@@ -2,6 +2,7 @@ package com.example.mylyceum;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
@@ -45,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
                     flag = 1;
                 }
                 password.setSelection(password.length());
+            }
+        });
+        entrance.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(MainActivity.this, main2.class);
+                setIntent(intent);
             }
         });
 
