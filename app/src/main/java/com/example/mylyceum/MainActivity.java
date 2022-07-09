@@ -52,7 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, main2.class);
-                setIntent(intent);
+                startActivity(intent);
             }
         });
 
