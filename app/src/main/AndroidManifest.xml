@@ -14,6 +14,10 @@
         android:theme="@style/Theme.MyLyceum"
         tools:targetApi="31">
         <activity
+            android:name=".main2"
+            android:exported="false"
+            android:label="@string/title_activity_main2" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>

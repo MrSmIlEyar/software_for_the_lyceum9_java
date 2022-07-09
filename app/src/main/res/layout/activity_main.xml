@@ -12,9 +12,10 @@
         android:id="@+id/password"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="60sp"
+        android:layout_marginHorizontal="45sp"
         android:layout_marginTop="305sp"
         android:ems="10"
+        android:hint="Пароль"
         android:inputType="textPassword"
         android:maxLength="15"
         android:textColorLink="#FF5722"
@@ -32,10 +33,10 @@
 
     <ImageButton
         android:id="@+id/eye"
-        android:layout_width="72dp"
+        android:layout_width="35dp"
         android:layout_height="64dp"
-        android:layout_marginHorizontal="60sp"
-        android:layout_marginStart="280sp"
+        android:layout_alignEnd="@id/password"
+        android:layout_marginTop="300sp"
         android:backgroundTint="#00FFFFFF"
         app:srcCompat="@android:drawable/ic_menu_view" />
 
@@ -43,9 +44,10 @@
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="60sp"
+        android:layout_marginHorizontal="45sp"
         android:layout_marginTop="255sp"
         android:ems="10"
+        android:hint="Логин"
         android:inputType="textPersonName"
         android:maxLength="15"
         android:textSize="24sp" />
