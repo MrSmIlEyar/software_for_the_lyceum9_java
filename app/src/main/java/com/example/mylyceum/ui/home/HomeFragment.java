@@ -1,8 +1,10 @@
 package com.example.mylyceum.ui.home;
 
+import androidx.annotation.ColorInt;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.Activity;
+import android.graphics.Color;
 import android.icu.lang.UCharacter;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -39,16 +41,18 @@ public class HomeFragment extends Fragment {
         for (int i = 0; i < 100; i++) {
             TextView textView = new TextView(getContext());
             textView.setText("Hello World");
+            int red = (int) (Math.random() * 200);
+            int blue = (int) (Math.random() * 200);
+            int green = (int) (Math.random() * 200);
+            textView.setTextColor(Color.rgb(red, green, blue));
             linearLayout.addView(textView);
         }
-
-
-
 
 
         return root;
 
     }
+
     @Override
     public void onDestroyView() {
         super.onDestroyView();
