@@ -14,12 +14,17 @@
         android:theme="@style/Theme.MyLyceum"
         tools:targetApi="31">
         <activity
+            android:name=".signup"
+            android:exported="false"
+            android:label="@string/title_activity_signup" />
+        <activity
             android:name=".main2"
             android:exported="false"
             android:label="@string/title_activity_main2" />
         <activity
             android:name=".MainActivity"
-            android:exported="true">
+            android:exported="true"
+            android:label="@string/signin" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

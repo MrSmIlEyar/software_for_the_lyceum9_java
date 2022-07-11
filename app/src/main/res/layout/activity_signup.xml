@@ -21,15 +21,6 @@
         android:textColorLink="#FF5722"
         android:textSize="24sp" />
 
-    <Button
-        android:id="@+id/entrance"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="60sp"
-        android:layout_marginTop="425sp"
-        android:text="Вход"
-        app:rippleColor="#FFFFFF" />
-
     <ImageButton
         android:id="@+id/eye"
         android:layout_width="35dp"
@@ -37,7 +28,7 @@
         android:layout_alignEnd="@id/password"
         android:layout_marginTop="300sp"
         android:backgroundTint="#00FFFFFF"
-        app:srcCompat="@drawable/hidden" />
+        app:srcCompat="@android:drawable/ic_menu_view" />
 
     <EditText
         android:id="@+id/login"
@@ -58,6 +49,40 @@
         android:layout_below="@+id/login"
         android:layout_marginHorizontal="60sp"
         android:layout_marginTop="190sp"
-        android:text="Регистрация" />
+        android:text="Зарегистрироваться" />
+
+    <EditText
+        android:id="@+id/class_user"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/login"
+        android:layout_marginHorizontal="45sp"
+        android:layout_marginTop="-108sp"
+        android:hint="Класс"
+        android:maxLength="3"
+        android:textSize="24sp" />
+
+    <EditText
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginHorizontal="45sp"
+        android:inputType="textPersonName"
+        android:hint="Имя"
+        android:textSize="24sp"
+        android:layout_below="@id/password" />
+
+    <EditText
+        android:id="@+id/surname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:layout_marginHorizontal="45sp"
+        android:inputType="textPersonName"
+        android:hint="Фамилия"
+        android:textSize="24sp"
+        android:layout_below="@id/name" />
+
 
 </RelativeLayout>

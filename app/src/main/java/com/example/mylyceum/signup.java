@@ -1,17 +1,18 @@
 package com.example.mylyceum;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
+
+
+import androidx.appcompat.app.AppCompatActivity;
+
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
-public class MainActivity extends AppCompatActivity {
-    private Button entrance; //кнопка входа
+public class signup extends AppCompatActivity {
     private EditText password; //строка ввода пароля
     private ImageButton eye; //глазик на поле ввода пароля
     private EditText login; //поле ввода логина
@@ -23,8 +24,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
-        entrance = findViewById(R.id.entrance);
+        setContentView(R.layout.activity_signup);
         signup = findViewById(R.id.signup);
         password = findViewById(R.id.password);
         eye = findViewById(R.id.eye);
@@ -33,7 +33,6 @@ public class MainActivity extends AppCompatActivity {
         id = getResources().getIdentifier("@android:drawable/ic_menu_view", null, null);
         id2 = getResources().getIdentifier("@android:drawable/ic_menu_close_clear_cancel", null, null);
         password.setInputType(1); //устанавливаем обычный ввод с клавиатуры
-
         //обрабатываем глазик для поля ввода пароля
         eye.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -51,21 +50,11 @@ public class MainActivity extends AppCompatActivity {
             }
         });
         //обработка глазика для воода пароля окончена
-
-        //обработка кнопки входа
-        entrance.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, main2.class);
-                startActivity(intent);
-            }
-        });
-        //обработка кнопки входа окончена
         //обработка кнопки регистрации
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, signup.class);
+                Intent intent = new Intent(signup.this, main2.class);
                 startActivity(intent);
             }
         });
