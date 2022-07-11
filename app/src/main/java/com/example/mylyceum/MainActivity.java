@@ -1,5 +1,6 @@
 package com.example.mylyceum;
 
+import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -19,6 +20,7 @@ public class MainActivity extends AppCompatActivity {
     private int flag; //флаг на режимы глазика
     private int id; //режим глазика, когда пароль виден
     private int id2; //режим глазика, когда пароль не виден
+    private ActionBar ab;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,20 +32,20 @@ public class MainActivity extends AppCompatActivity {
         eye = findViewById(R.id.eye);
         login = findViewById(R.id.login);
         flag = 1;
-        id = getResources().getIdentifier("@android:drawable/ic_menu_view", null, null);
-        id2 = getResources().getIdentifier("@android:drawable/ic_menu_close_clear_cancel", null, null);
+        id = getResources().getIdentifier("@android:drawable/ic_hidden", null, null);
+        id2 = getResources().getIdentifier("@android:drawable/ic_open", null, null);
+        System.out.println(id2);
         password.setInputType(1); //устанавливаем обычный ввод с клавиатуры
-
         //обрабатываем глазик для поля ввода пароля
         eye.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 if (flag == 1) {
-                    eye.setImageResource(id2);
+                    eye.setImageResource(getResources().getIdentifier("@android:drawable/ic_ihidden.xml", null, null));
                     password.setTransformationMethod(new PasswordTransformationMethod());
                     flag = 0;
                 } else {
-                    eye.setImageResource(id);
+                    eye.setImageResource(getResources().getIdentifier("@android:drawable/ic_ihidden.xml", null, null));
                     password.setTransformationMethod(null);
                     flag = 1;
                 }

@@ -30,8 +30,8 @@ public class signup extends AppCompatActivity {
         eye = findViewById(R.id.eye);
         login = findViewById(R.id.login);
         flag = 1;
-        id = getResources().getIdentifier("@android:drawable/ic_menu_view", null, null);
-        id2 = getResources().getIdentifier("@android:drawable/ic_menu_close_clear_cancel", null, null);
+        id = getResources().getIdentifier("@android:drawable/ic_hidden", null, null);
+        id2 = getResources().getIdentifier("@android:drawable/ic_open", null, null);
         password.setInputType(1); //устанавливаем обычный ввод с клавиатуры
         //обрабатываем глазик для поля ввода пароля
         eye.setOnClickListener(new View.OnClickListener() {

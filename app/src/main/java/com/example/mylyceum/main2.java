@@ -33,5 +33,10 @@ public class main2 extends AppCompatActivity {
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
     }
+    @Override
+    public void onBackPressed()
+    {
+        //ничего не делаем
+    }
 
 }
