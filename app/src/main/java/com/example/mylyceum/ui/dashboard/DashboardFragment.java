@@ -21,14 +21,14 @@ public class DashboardFragment extends Fragment {
 
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-//        TabItem monday = binding.monday;
-//        TabItem tuesday = binding.tuesday;
-//        TabItem wednesday = binding.wednesday;
-//        TabItem thursday = binding.thursday;
-//        TabItem friday = binding.friday;
-//        TabItem saturday = binding.saturday;
+//        TabItem monday = binding.mondays;
+//        TabItem tuesday = binding.tuesdays;
+//        TabItem wednesday = binding.wednesdays;
+//        TabItem thursday = binding.thursdays;
+//        TabItem friday = binding.fridays;
+//        TabItem saturday = binding.saturdays;
 //        ViewPager2 viewPager = binding.viewpagers;
-//        PageAdapter pageAdapter = new PageAdapter(this);
+//        PageAdapter pageAdapter = new PageAdapter(getActivity());
 //        viewPager.setAdapter(pageAdapter);
         return root;
     }

@@ -22,12 +22,7 @@ import androidx.lifecycle.ViewModelProvider;
 
 import com.example.mylyceum.R;
 import com.example.mylyceum.databinding.FragmentHomeBinding;
-import com.example.mylyceum.ui.dashboard.Friday;
-import com.example.mylyceum.ui.dashboard.Monday;
-import com.example.mylyceum.ui.dashboard.Saturday;
-import com.example.mylyceum.ui.dashboard.Thursday;
-import com.example.mylyceum.ui.dashboard.Tuesday;
-import com.example.mylyceum.ui.dashboard.Wednesday;
+
 
 import java.util.ArrayList;
 
