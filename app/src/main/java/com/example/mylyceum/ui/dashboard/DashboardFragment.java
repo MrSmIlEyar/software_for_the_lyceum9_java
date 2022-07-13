@@ -4,19 +4,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.TextView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.lifecycle.ViewModelProvider;
-import androidx.fragment.app.FragmentActivity;
 import androidx.viewpager2.widget.ViewPager2;
-import com.google.android.material.tabs.TabLayout;
-import com.google.android.material.tabs.TabLayoutMediator;
 
 import com.example.mylyceum.databinding.FragmentDashboardBinding;
+import com.google.android.material.tabs.TabItem;
 
 public class DashboardFragment extends Fragment {
 
@@ -24,12 +18,18 @@ public class DashboardFragment extends Fragment {
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
-        DashboardViewModel dashboardViewModel =
-                new ViewModelProvider(this).get(DashboardViewModel.class);
 
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
+//        TabItem monday = binding.monday;
+//        TabItem tuesday = binding.tuesday;
+//        TabItem wednesday = binding.wednesday;
+//        TabItem thursday = binding.thursday;
+//        TabItem friday = binding.friday;
+//        TabItem saturday = binding.saturday;
+//        ViewPager2 viewPager = binding.viewpagers;
+//        PageAdapter pageAdapter = new PageAdapter(this);
+//        viewPager.setAdapter(pageAdapter);
         return root;
     }
 
