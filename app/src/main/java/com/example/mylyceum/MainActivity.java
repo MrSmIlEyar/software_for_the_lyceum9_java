@@ -1,6 +1,5 @@
 package com.example.mylyceum;
 
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
@@ -11,6 +10,9 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
 
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+
 public class MainActivity extends AppCompatActivity {
     private Button entrance; //кнопка входа
     private EditText password; //строка ввода пароля
@@ -20,7 +22,8 @@ public class MainActivity extends AppCompatActivity {
     private int flag; //флаг на режимы глазика
     private int id; //режим глазика, когда пароль виден
     private int id2; //режим глазика, когда пароль не виден
-    private ActionBar ab;
+    private DatabaseReference accounts; //инициализируем БД
+    private String groupUser = "Users";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,6 +35,7 @@ public class MainActivity extends AppCompatActivity {
         eye = findViewById(R.id.eye);
         login = findViewById(R.id.login);
         flag = 1;
+        accounts = FirebaseDatabase.getInstance().getReference(groupUser);
         id = getResources().getIdentifier("@android:drawable/ic_hidden", null, null);
         id2 = getResources().getIdentifier("@android:drawable/ic_open", null, null);
         System.out.println(id2);

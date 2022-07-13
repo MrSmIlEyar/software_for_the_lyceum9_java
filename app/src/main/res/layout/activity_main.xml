@@ -36,8 +36,7 @@
         android:layout_height="64dp"
         android:layout_alignEnd="@id/password"
         android:layout_marginTop="300sp"
-        android:backgroundTint="#00FFFFFF"
-        app:srcCompat="@drawable/hidden" />
+        android:backgroundTint="#00FFFFFF" />
 
     <EditText
         android:id="@+id/login"

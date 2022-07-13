@@ -23,6 +23,8 @@ import androidx.lifecycle.ViewModelProvider;
 import com.example.mylyceum.R;
 import com.example.mylyceum.databinding.FragmentHomeBinding;
 
+import java.util.ArrayList;
+
 public class HomeFragment extends Fragment {
     private int chet;
 
@@ -37,15 +39,24 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         LinearLayout linearLayout = binding.linearlayout;
+        ArrayList<String> news = new ArrayList<>();
+        news.add("Я тут");
+        news.add("а нет я тут");
+        news.add("Я здеся");
 //        Добавление карточек с новостями
         for (int i = 0; i < 100; i++) {
             TextView textView = new TextView(getContext());
-            textView.setText("Hello World");
+            CardView card = new CardView(getContext());
+            card.setCardElevation(50);
             int red = (int) (Math.random() * 200);
             int blue = (int) (Math.random() * 200);
             int green = (int) (Math.random() * 200);
-            textView.setTextColor(Color.rgb(red, green, blue));
-            linearLayout.addView(textView);
+            int index = (int) (Math.random() * 2);
+            textView.setText(news.get(index));
+            textView.setTextColor(Color.rgb(0, 0, 0));
+            card.setCardBackgroundColor(Color.rgb(red, green, blue));
+            card.addView(textView);
+            linearLayout.addView(card);
         }
 
 

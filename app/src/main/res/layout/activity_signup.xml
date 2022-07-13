@@ -77,12 +77,12 @@
         android:id="@+id/surname"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:ems="10"
+        android:layout_below="@id/name"
         android:layout_marginHorizontal="45sp"
-        android:inputType="textPersonName"
+        android:ems="10"
         android:hint="Фамилия"
-        android:textSize="24sp"
-        android:layout_below="@id/name" />
+        android:inputType="textPersonName"
+        android:textSize="24sp" />
 
 
 </RelativeLayout>
