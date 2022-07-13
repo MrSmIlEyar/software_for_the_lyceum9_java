@@ -37,7 +37,7 @@
         android:layout_alignEnd="@id/password"
         android:layout_marginTop="300sp"
         android:backgroundTint="#00FFFFFF"
-        app:srcCompat="@drawable/ic_hidden" />
+        app:srcCompat="@drawable/hidden" />
 
     <EditText
         android:id="@+id/login"
