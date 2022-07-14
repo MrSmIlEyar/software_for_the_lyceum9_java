@@ -4,13 +4,13 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TabHost;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
-import androidx.viewpager2.widget.ViewPager2;
 
+import com.example.mylyceum.R;
 import com.example.mylyceum.databinding.FragmentDashboardBinding;
-import com.google.android.material.tabs.TabItem;
 
 public class DashboardFragment extends Fragment {
 
@@ -21,15 +21,44 @@ public class DashboardFragment extends Fragment {
 
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-//        TabItem monday = binding.mondays;
-//        TabItem tuesday = binding.tuesdays;
-//        TabItem wednesday = binding.wednesdays;
-//        TabItem thursday = binding.thursdays;
-//        TabItem friday = binding.fridays;
-//        TabItem saturday = binding.saturdays;
-//        ViewPager2 viewPager = binding.viewpagers;
-//        PageAdapter pageAdapter = new PageAdapter(getActivity());
-//        viewPager.setAdapter(pageAdapter);
+
+        TabHost tabHost = (TabHost) binding.tabHost;
+
+        tabHost.setup();
+
+        TabHost.TabSpec tabSpec = tabHost.newTabSpec("tag1");
+
+        tabSpec.setContent(R.id.linearLayout);
+        tabSpec.setIndicator("пн");
+        tabHost.addTab(tabSpec);
+
+        tabSpec = tabHost.newTabSpec("tag2");
+        tabSpec.setContent(R.id.linearLayout2);
+        tabSpec.setIndicator("вт");
+        tabHost.addTab(tabSpec);
+
+        tabSpec = tabHost.newTabSpec("tag3");
+        tabSpec.setContent(R.id.linearLayout3);
+        tabSpec.setIndicator("ср");
+        tabHost.addTab(tabSpec);
+
+        tabSpec = tabHost.newTabSpec("tag4");
+        tabSpec.setContent(R.id.linearLayout4);
+        tabSpec.setIndicator("чт");
+        tabHost.addTab(tabSpec);
+
+        tabSpec = tabHost.newTabSpec("tag5");
+        tabSpec.setContent(R.id.linearLayout5);
+        tabSpec.setIndicator("пт");
+        tabHost.addTab(tabSpec);
+
+        tabSpec = tabHost.newTabSpec("tag6");
+        tabSpec.setContent(R.id.linearLayout6);
+        tabSpec.setIndicator("сб");
+        tabHost.addTab(tabSpec);
+
+        tabHost.setCurrentTab(0);
+
         return root;
     }
 
