@@ -8,7 +8,6 @@
 
     <TabHost
         android:id="@+id/tabHost"
-        xmlns:android="http://schemas.android.com/apk/res/android"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_horizontal">
@@ -45,6 +44,7 @@
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:text="Кнопка на первой вкладке" />
+
                     </LinearLayout>
                 </LinearLayout>
 
@@ -141,4 +141,5 @@
             </FrameLayout>
         </LinearLayout>
     </TabHost>
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>

@@ -6,6 +6,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TabHost;
 
+import android.os.Bundle;
+import android.widget.TabHost;
+
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 
@@ -21,8 +24,7 @@ public class DashboardFragment extends Fragment {
 
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-
-        TabHost tabHost = (TabHost) binding.tabHost;
+        TabHost tabHost = binding.tabHost;
 
         tabHost.setup();
 
@@ -68,3 +70,4 @@ public class DashboardFragment extends Fragment {
         binding = null;
     }
 }
+
