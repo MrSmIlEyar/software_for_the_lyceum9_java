@@ -37,14 +37,65 @@
                     <LinearLayout
                         android:id="@+id/tab1"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
+                        android:layout_height="match_parent">
 
-                        <Button
-                            android:id="@+id/button1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="wrap_content"
-                            android:text="Кнопка на первой вкладке" />
+                        <RelativeLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
 
+                            <androidx.cardview.widget.CardView
+                                android:id="@+id/card_view"
+                                style="@style/MyCardViewStyle"
+                                android:layout_width="match_parent"
+                                android:layout_height="150sp"
+                                android:layout_gravity="center"
+                                android:layout_marginHorizontal="16dp"
+                                android:layout_marginVertical="16dp"
+                                app:cardCornerRadius="4dp"
+                                app:contentPaddingBottom="0sp"
+                                app:contentPaddingLeft="0sp"
+                                app:contentPaddingRight="0sp"
+                                app:contentPaddingTop="0sp"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                tools:layout_editor_absoluteX="16dp">
+
+                                <RelativeLayout
+                                    android:id = "@+id/cardlayout"
+                                    android:layout_width="match_parent"
+                                    android:layout_height="match_parent">
+
+                                    <TextView
+                                        android:id="@+id/textView15"
+                                        style="@style/LeftTextViewStyle"
+                                        android:layout_width="150sp"
+                                        android:layout_height="match_parent"
+                                        android:gravity="center"
+                                        android:text="8.00\n-\n8.45" />
+
+                                    <TextView
+                                        android:id="@+id/textView16"
+                                        style="@style/RightTextViewStyle"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="75sp"
+                                        android:layout_toRightOf="@+id/textView15"
+                                        android:gravity="center_horizontal"
+                                        android:paddingTop="40sp"
+                                        android:text="Алгебра" />
+
+                                    <TextView
+                                        android:id="@+id/textView17"
+                                        android:layout_width="match_parent"
+                                        android:layout_height="75sp"
+                                        android:layout_below="@+id/textView16"
+                                        android:layout_toRightOf="@+id/textView15"
+                                        android:gravity="center_horizontal"
+                                        android:paddingTop="10sp"
+                                        android:text="Кабинет 303" />
+                                </RelativeLayout>
+
+                            </androidx.cardview.widget.CardView>
+
+                        </RelativeLayout>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -53,10 +104,11 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:id="@+id/tab2"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
+                        android:layout_height="match_parent">
 
                         <Button
                             android:id="@+id/button2"
