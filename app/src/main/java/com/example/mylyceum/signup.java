@@ -47,7 +47,7 @@ public class signup extends AppCompatActivity {
         id = getResources().getIdentifier("@android:drawable/ic_hidden", null, null);
         id2 = getResources().getIdentifier("@android:drawable/ic_open", null, null);
         password.setInputType(1); //устанавливаем обычный ввод с клавиатуры
-        //обрабатываем глазик для поля ввода пароля
+        //обрабатываем глазик для поля ввода пароляф
         eye.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

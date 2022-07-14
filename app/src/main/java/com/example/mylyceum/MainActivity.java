@@ -4,11 +4,13 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageButton;
+import android.widget.Toast;
 
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
@@ -62,8 +64,16 @@ public class MainActivity extends AppCompatActivity {
         entrance.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, main2.class);
-                startActivity(intent);
+                String userlogin = login.getText().toString();
+                String userpassword = login.getText().toString();
+                if (!TextUtils.isEmpty(userlogin) && !TextUtils.isEmpty(userpassword)) {
+                    Intent intent = new Intent(MainActivity.this, main2.class);
+                    startActivity(intent);
+                }
+                else {
+                    Toast.makeText(MainActivity.this, "Есть пустое поле", Toast.LENGTH_SHORT).show();
+                }
+
             }
         });
         //обработка кнопки входа окончена
