@@ -1,0 +1,254 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <RelativeLayout
+                android:id="@+id/relativers3"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/carder2"
+                    style="@style/MyCardViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="150sp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="16dp"
+                    app:cardCornerRadius="4dp"
+                    app:contentPaddingBottom="0sp"
+                    app:contentPaddingLeft="0sp"
+                    app:contentPaddingRight="0sp"
+                    app:contentPaddingTop="0sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:layout_editor_absoluteX="16dp">
+
+                    <RelativeLayout
+                        android:id="@+id/relativer2"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/timer2"
+                            style="@style/LeftTextViewStyle"
+                            android:layout_width="150sp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="8.00\n-\n8.45" />
+
+                        <TextView
+                            android:id="@+id/subject2"
+                            style="@style/RightTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="75sp"
+                            android:layout_toRightOf="@+id/timer2"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="40sp"
+                            android:text="Алгебра" />
+
+                        <TextView
+                            android:id="@+id/textView172"
+                            android:layout_width="match_parent"
+                            android:layout_height="75sp"
+                            android:layout_below="@+id/subject2"
+                            android:layout_toRightOf="@+id/timer2"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="10sp"
+                            android:text="Кабинет 303" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/relativers2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/carder3"
+                    style="@style/MyCardViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="150sp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="16dp"
+                    app:cardCornerRadius="4dp"
+                    app:contentPaddingBottom="0sp"
+                    app:contentPaddingLeft="0sp"
+                    app:contentPaddingRight="0sp"
+                    app:contentPaddingTop="0sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:layout_editor_absoluteX="16dp">
+
+                    <RelativeLayout
+                        android:id="@+id/relativer3"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/timer3"
+                            style="@style/LeftTextViewStyle"
+                            android:layout_width="150sp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="8.00\n-\n8.45" />
+
+                        <TextView
+                            android:id="@+id/subject3"
+                            style="@style/RightTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="75sp"
+                            android:layout_toRightOf="@+id/timer3"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="40sp"
+                            android:text="Алгебра" />
+
+                        <TextView
+                            android:id="@+id/textView173"
+                            android:layout_width="match_parent"
+                            android:layout_height="75sp"
+                            android:layout_below="@+id/subject3"
+                            android:layout_toRightOf="@+id/timer3"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="10sp"
+                            android:text="Кабинет 303" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/relativers4"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/carder4"
+                    style="@style/MyCardViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="150sp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="16dp"
+                    app:cardCornerRadius="4dp"
+                    app:contentPaddingBottom="0sp"
+                    app:contentPaddingLeft="0sp"
+                    app:contentPaddingRight="0sp"
+                    app:contentPaddingTop="0sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:layout_editor_absoluteX="16dp">
+
+                    <RelativeLayout
+                        android:id="@+id/relativer4"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/timer4"
+                            style="@style/LeftTextViewStyle"
+                            android:layout_width="150sp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="8.00\n-\n8.45" />
+
+                        <TextView
+                            android:id="@+id/subject4"
+                            style="@style/RightTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="75sp"
+                            android:layout_toRightOf="@+id/timer4"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="40sp"
+                            android:text="Алгебра" />
+
+                        <TextView
+                            android:id="@+id/textView175"
+                            android:layout_width="match_parent"
+                            android:layout_height="75sp"
+                            android:layout_below="@+id/subject4"
+                            android:layout_toRightOf="@+id/timer4"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="10sp"
+                            android:text="Кабинет 303" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+            </RelativeLayout>
+            <RelativeLayout
+                android:id="@+id/relativers"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <androidx.cardview.widget.CardView
+                    android:id="@+id/carder"
+                    style="@style/MyCardViewStyle"
+                    android:layout_width="match_parent"
+                    android:layout_height="150sp"
+                    android:layout_gravity="center"
+                    android:layout_marginHorizontal="16dp"
+                    android:layout_marginVertical="16dp"
+                    app:cardCornerRadius="4dp"
+                    app:contentPaddingBottom="0sp"
+                    app:contentPaddingLeft="0sp"
+                    app:contentPaddingRight="0sp"
+                    app:contentPaddingTop="0sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    tools:layout_editor_absoluteX="16dp">
+
+                    <RelativeLayout
+                        android:id="@+id/relativer"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <TextView
+                            android:id="@+id/timer"
+                            style="@style/LeftTextViewStyle"
+                            android:layout_width="150sp"
+                            android:layout_height="match_parent"
+                            android:gravity="center"
+                            android:text="8.00\n-\n8.45" />
+
+                        <TextView
+                            android:id="@+id/subject"
+                            style="@style/RightTextViewStyle"
+                            android:layout_width="match_parent"
+                            android:layout_height="75sp"
+                            android:layout_toRightOf="@+id/timer"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="40sp"
+                            android:text="Алгебра" />
+
+                        <TextView
+                            android:id="@+id/textView17"
+                            android:layout_width="match_parent"
+                            android:layout_height="75sp"
+                            android:layout_below="@+id/subject"
+                            android:layout_toRightOf="@+id/timer"
+                            android:gravity="center_horizontal"
+                            android:paddingTop="10sp"
+                            android:text="Кабинет 303" />
+                    </RelativeLayout>
+
+                </androidx.cardview.widget.CardView>
+
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

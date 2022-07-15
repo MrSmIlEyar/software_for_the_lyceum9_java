@@ -1,32 +1,38 @@
 package com.example.mylyceum.ui.dashboard;
 
+import android.annotation.SuppressLint;
 import android.app.ActionBar;
+import android.app.Activity;
 import android.graphics.Color;
+import android.os.Bundle;
+import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import androidx.appcompat.app.AppCompatActivity;
+
 
 import androidx.cardview.widget.CardView;
+import androidx.coordinatorlayout.widget.CoordinatorLayout;
+
+import com.example.mylyceum.R;
+import com.example.mylyceum.databinding.FragmentDashboardBinding;
+import com.google.android.material.navigation.NavigationView;
 
 
-public class DashboardAddBoard {
+
+public class DashboardAddBoard extends AppCompatActivity{
     private String dayOfWeek;
     private RelativeLayout relativeLayout;
     private CardView cardView;
 
+
     public RelativeLayout getRelativeLayout(String dayOfWeek) {
-        relativeLayout.setLayoutParams(new RelativeLayout.LayoutParams(
-                RelativeLayout
-                        .LayoutParams
-                        .MATCH_PARENT, RelativeLayout.LayoutParams.MATCH_PARENT));
-        cardView.setBackgroundColor(Color.rgb(255, 255, 255));
-        cardView.setContentPadding(16, 24,16,24);
-        cardView.setMaxCardElevation(4);
-        cardView.setElevation(2);
-        cardView.setRadius(10);
-        cardView.setLayoutParams(new ViewGroup.LayoutParams(
-                CardView.LayoutParams.MATCH_PARENT, 150));
-//        cardView.setForegroundGravity();
+//        RelativeLayout relativeLayout = findViewById(R.id.relativers);
+
+        System.out.println("True");
+
+
         return relativeLayout;
     }
 

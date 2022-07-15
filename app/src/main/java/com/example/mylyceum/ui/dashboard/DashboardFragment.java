@@ -46,10 +46,8 @@ public class DashboardFragment extends Fragment {
 
         tabSpec = tabHost.newTabSpec("tag2");
         tabSpec.setContent(R.id.linearLayout2);
-        LinearLayout linearLayout = binding.tab2;
-        RelativeLayout relativeLayout = new RelativeLayout(getContext());
-        linearLayout.removeAllViews();
-        linearLayout.addView(relativeLayout);
+        LinearLayout linearLayout = binding.linearLayout2;
+//        linearLayout.addView(dashboard_add_board.getRelativeLayout("вт"));
         tabSpec.setIndicator("вт");
 
         tabHost.addTab(tabSpec);
