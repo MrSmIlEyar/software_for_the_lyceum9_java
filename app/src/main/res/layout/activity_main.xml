@@ -28,7 +28,7 @@
         app:layout_constraintVertical_bias="0.823" />
 
     <Button
-        android:id="@+id/entrance"
+        android:id="@+id/signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="95sp"
@@ -42,7 +42,7 @@
         app:layout_constraintVertical_bias="0.679" />
 
     <Button
-        android:id="@+id/signup"
+        android:id="@+id/entrance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="95sp"
@@ -124,6 +124,7 @@
         android:hint=" Пароль"
         android:inputType="textPassword"
         android:textSize="20sp"
+        android:theme="@style/Theme.MyLyceum"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
