@@ -18,17 +18,26 @@ import androidx.fragment.app.Fragment;
 import com.example.mylyceum.R;
 import com.example.mylyceum.databinding.FragmentDashboardBinding;
 
+import java.util.Calendar;
+import java.util.Date;
+
+
 public class DashboardFragment extends Fragment {
     private DashboardAddBoard dashboard_add_board = new DashboardAddBoard();
     private FragmentDashboardBinding binding;
 
+    public static int getDayNumberOld(Date date) {
+        Calendar cal = Calendar.getInstance();
+        cal.setTime(date);
+        return cal.get(Calendar.DAY_OF_WEEK);
+    }
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
+
 
         binding = FragmentDashboardBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         TabHost tabHost = binding.tabHost;
-
         tabHost.setup();
 
         TabHost.TabSpec tabSpec = tabHost.newTabSpec("tag1");
@@ -39,7 +48,8 @@ public class DashboardFragment extends Fragment {
         System.out.println(day_of_week);
 
 
-
+//        Date date = new Date();
+//        int day_of_week = getDayNumberOld(date) - 1;
         tabSpec.setContent(R.id.linearLayout);
         tabSpec.setIndicator("пн");
         tabHost.addTab(tabSpec);
@@ -99,7 +109,6 @@ public class DashboardFragment extends Fragment {
 
         return root;
     }
-
     @Override
     public void onDestroyView() {
         super.onDestroyView();

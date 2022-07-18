@@ -42,7 +42,7 @@ public class HomeFragment extends Fragment {
         LinearLayout linearLayout = binding.linearlayout;
         ArrayList<String> news = new ArrayList<>();
         news.add("Я тут");
-        news.add("а нет я тут");
+        news.add("а нет я \n тут");
         news.add("Я здеся");
 //        Добавление карточек с новостями
         for (int i = 0; i < 100; i++) {
@@ -59,7 +59,6 @@ public class HomeFragment extends Fragment {
             card.addView(textView);
             linearLayout.addView(card);
         }
-
 
         return root;
 

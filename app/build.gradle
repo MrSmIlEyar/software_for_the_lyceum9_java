@@ -40,6 +40,7 @@ dependencies {
     implementation 'androidx.navigation:navigation-fragment:2.5.0'
     implementation 'androidx.navigation:navigation-ui:2.5.0'
     implementation platform('com.google.firebase:firebase-bom:26.3.0')
+    implementation group:'com.google.android.material',name:'material',version:'1.7.0-alpha02'
     implementation 'com.google.firebase:firebase-database-ktx'
     implementation 'com.google.firebase:firebase-database:20.0.5'
     testImplementation 'junit:junit:4.13.2'

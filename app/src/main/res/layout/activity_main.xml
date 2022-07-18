@@ -1,62 +1,135 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/login_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:orientation="vertical"
+    android:background="#9C27B0"
+    android:backgroundTint="@color/purple_700"
+    android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
     tools:context=".MainActivity">
 
-    <EditText
-        android:id="@+id/password"
-        android:layout_width="match_parent"
+
+    <Button
+        android:id="@+id/vk_link"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="45sp"
-        android:layout_marginTop="305sp"
-        android:ems="10"
-        android:hint="Пароль"
-        android:inputType="textPassword"
-        android:maxLength="15"
-        android:textColorLink="#FF5722"
-        android:textSize="24sp" />
+        android:background="#FF764B"
+        android:backgroundTint="#FF7448"
+        android:backgroundTintMode="screen"
+        android:drawableLeft="@drawable/ic_vk"
+        android:text="Мы Вконтакте"
+        android:textColor="#AC724C"
+        android:autoLink=""
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.823" />
 
     <Button
         android:id="@+id/entrance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="60sp"
-        android:layout_marginTop="425sp"
-        android:text="Вход"
-        app:rippleColor="#FFFFFF" />
-
-    <ImageButton
-        android:id="@+id/eye"
-        android:layout_width="35dp"
-        android:layout_height="64dp"
-        android:layout_alignEnd="@id/password"
-        android:layout_marginTop="300sp"
-        android:backgroundTint="#00FFFFFF" />
-
-    <EditText
-        android:id="@+id/login"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="45sp"
-        android:layout_marginTop="255sp"
-        android:ems="10"
-        android:hint="Логин"
-        android:inputType="textPersonName"
-        android:maxLength="15"
-        android:textSize="24sp" />
+        android:layout_marginHorizontal="95sp"
+        android:text="Регистрация"
+        android:textColor="#AC724C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.679" />
 
     <Button
         android:id="@+id/signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/login"
-        android:layout_marginHorizontal="60sp"
-        android:layout_marginTop="190sp"
-        android:text="Регистрация" />
+        android:layout_marginHorizontal="95sp"
+        android:text="Вход"
+        android:textColor="#AC724C"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.549" />
 
-</RelativeLayout>
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="111dp"
+        android:layout_height="149dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/poet" />
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="2022 "
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.311"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.888" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="cursive"
+        android:text="Pushkinisti©"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.887" />
+
+    <EditText
+        android:id="@+id/login"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:layout_marginHorizontal="45sp"
+        android:drawableLeft="@drawable/ic_login"
+        android:hint=" Логин"
+        android:scrollbarThumbHorizontal="@null"
+        android:scrollbarThumbVertical="@null"
+        android:textColor="#FFFFFF"
+        android:textSize="20sp"
+        android:theme="@style/Theme.MyLyceum"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.505"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.309">
+
+    </EditText>
+
+    <EditText
+        android:id="@+id/password"
+        style="@style/Theme.MyLyceum"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginHorizontal="45sp"
+        android:drawableLeft="@drawable/ic_password"
+        android:hint=" Пароль"
+        android:inputType="textPassword"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.421">
+
+    </EditText>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
