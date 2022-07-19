@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#9C27B0"
-    android:backgroundTint="@color/purple_700"
+    android:backgroundTint="@color/white"
     android:theme="@style/Theme.AppCompat.DayNight.NoActionBar"
     tools:context=".MainActivity">
 
@@ -14,13 +14,13 @@
         android:id="@+id/vk_link"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:autoLink=""
         android:background="#FF764B"
         android:backgroundTint="#FF7448"
         android:backgroundTintMode="screen"
         android:drawableLeft="@drawable/ic_vk"
         android:text="Мы Вконтакте"
-        android:textColor="#AC724C"
-        android:autoLink=""
+        android:textColor="#5A3D30"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -33,7 +33,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="95sp"
         android:text="Регистрация"
-        android:textColor="#AC724C"
+        android:textColor="#5A3D30"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
@@ -47,7 +47,7 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="95sp"
         android:text="Вход"
-        android:textColor="#AC724C"
+        android:textColor="#5A3D30"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -59,6 +59,7 @@
         android:id="@+id/imageView"
         android:layout_width="111dp"
         android:layout_height="149dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -73,10 +74,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.311"
+        app:layout_constraintHorizontal_bias="0.329"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.888" />
+        app:layout_constraintVertical_bias="0.886" />
 
     <TextView
         android:id="@+id/textView2"
@@ -87,10 +88,10 @@
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.65"
+        app:layout_constraintHorizontal_bias="0.63"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.887" />
+        app:layout_constraintVertical_bias="0.884" />
 
     <EditText
         android:id="@+id/login"
@@ -102,7 +103,7 @@
         android:hint=" Логин"
         android:scrollbarThumbHorizontal="@null"
         android:scrollbarThumbVertical="@null"
-        android:textColor="#FFFFFF"
+        android:textColor="#5A3D30"
         android:textSize="20sp"
         android:theme="@style/Theme.MyLyceum"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -123,6 +124,7 @@
         android:drawableLeft="@drawable/ic_password"
         android:hint=" Пароль"
         android:inputType="textPassword"
+        android:textColor="#5A3D30"
         android:textSize="20sp"
         android:theme="@style/Theme.MyLyceum"
         app:layout_constraintBottom_toBottomOf="parent"
