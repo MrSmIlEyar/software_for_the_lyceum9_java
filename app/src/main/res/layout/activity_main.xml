@@ -97,10 +97,10 @@
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-
+        android:inputType="textEmailAddress"
         android:layout_marginHorizontal="45sp"
-        android:drawableLeft="@drawable/ic_login"
-        android:hint=" Логин"
+        android:drawableLeft="@drawable/ic_email"
+        android:hint=" Почта"
         android:scrollbarThumbHorizontal="@null"
         android:scrollbarThumbVertical="@null"
         android:textColor="#5A3D30"

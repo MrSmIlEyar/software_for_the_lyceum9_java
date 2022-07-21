@@ -44,8 +44,8 @@ public class signup extends AppCompatActivity {
         login = findViewById(R.id.login);
         flag = 1;
         mylyceumdatabase = FirebaseDatabase.getInstance().getReference(groupUsers);
-        id = getResources().getIdentifier("@android:drawable/ic_hidden", null, null);
-        id2 = getResources().getIdentifier("@android:drawable/ic_open", null, null);
+        id = getResources().getIdentifier("@android:drawable/ic_view", null, null);
+        id2 = getResources().getIdentifier("@android:drawable/ic_hide", null, null);
         password.setInputType(1); //устанавливаем обычный ввод с клавиатуры
         //обрабатываем глазик для поля ввода пароляф
         eye.setOnClickListener(new View.OnClickListener() {

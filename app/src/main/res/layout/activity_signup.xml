@@ -28,7 +28,7 @@
         android:layout_alignEnd="@id/password"
         android:layout_marginTop="300sp"
         android:backgroundTint="#00FFFFFF"
-        app:srcCompat="@android:drawable/ic_menu_view" />
+        app:srcCompat="@drawable/ic_view" />
 
     <EditText
         android:id="@+id/login"
