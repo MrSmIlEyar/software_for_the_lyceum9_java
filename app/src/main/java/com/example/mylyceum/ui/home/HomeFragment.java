@@ -21,7 +21,9 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.mylyceum.R;
+import com.example.mylyceum.check;
 import com.example.mylyceum.databinding.FragmentHomeBinding;
+import com.example.mylyceum.main2.*;
 
 
 import java.util.ArrayList;
@@ -44,6 +46,7 @@ public class HomeFragment extends Fragment {
         news.add("Я тут");
         news.add("а нет я \n тут");
         news.add("Я здеся");
+
 //        Добавление карточек с новостями
         for (int i = 0; i < 100; i++) {
             TextView textView = new TextView(getContext());

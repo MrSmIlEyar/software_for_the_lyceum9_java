@@ -5,11 +5,7 @@ public class User {
 
     public User() {
     }
-    public User(String login, String password, String name, String surname, String Class){
-        this.login = login;
-        this.password = password;
-        this.name = name;
-        this.surname = surname;
+    public User(String Class){
         this.Class = Class;
     }
 }

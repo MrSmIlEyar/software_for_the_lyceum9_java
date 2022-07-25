@@ -20,7 +20,6 @@ public class main2 extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
         binding = ActivityMain2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         BottomNavigationView navView = findViewById(R.id.nav_view);
@@ -38,5 +37,6 @@ public class main2 extends AppCompatActivity {
     {
         //ничего не делаем
     }
+
 
 }
