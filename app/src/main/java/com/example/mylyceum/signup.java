@@ -10,8 +10,12 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.text.method.PasswordTransformationMethod;
 import android.view.View;
+import android.widget.Adapter;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Spinner;
 import android.widget.Toast;
 
 import com.google.android.gms.tasks.OnCompleteListener;
@@ -23,7 +27,10 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class signup extends AppCompatActivity {
     private EditText password; //строка ввода пароля
-    private EditText Class; //стркоа ввода класса
+    private Spinner Class; //стркоа ввода класса
+    private Spinner ClassBukv; //стркоа ввода класса
+    String[] nachalbukv = { "А", "Б", "В", "К", "Л", "М", "Н"};
+    String[] starshbukv = { "А", "Б"};
     private EditText login; //поле ввода логина
     private Button signup; //кнопка регистрации
     private FirebaseAuth mAuth; //токен аутенфикации пользователя
@@ -35,7 +42,35 @@ public class signup extends AppCompatActivity {
         setContentView(R.layout.activity_signup);
         signup = findViewById(R.id.signup);
         password = findViewById(R.id.password_user);
-        Class = findViewById(R.id.Classuser);
+        Class = findViewById(R.id.class_numb);
+        ClassBukv = findViewById(R.id.class_bukv);
+        Class.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
+            public void onItemSelected(AdapterView<?> parent,
+                                       View itemSelected, int selectedItemPosition, long selectedId) {
+
+                String[] choose = getResources().getStringArray(R.array.class_number);
+                String toast = choose[selectedItemPosition];
+                int foo = Integer.parseInt(toast);
+                if (foo < 10) {
+                    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getApplicationContext(),
+                            R.array.nachal_class,
+                            android.R.layout.simple_spinner_item);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    ClassBukv.setAdapter(adapter);
+                }
+                else{
+                    ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(getApplicationContext(),
+                            R.array.high_class, android.R.layout.simple_spinner_item);
+                    adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                    ClassBukv.setAdapter(adapter);
+                }
+
+
+
+            }
+            public void onNothingSelected(AdapterView<?> parent) {
+            }
+        });
         login = findViewById(R.id.login_email);
         mAuth = FirebaseAuth.getInstance();
         mylyceumdatabase = FirebaseDatabase.getInstance().getReference("Users");
@@ -45,7 +80,10 @@ public class signup extends AppCompatActivity {
         signup.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String userclass = Class.getText().toString(); // получаем класс юзера
+                String userclass = Class.getSelectedItem().toString() + ClassBukv.getSelectedItem().toString();
+                System.out.println(userclass);
+                // Определяем разметку для использования при выборе элемента
+                // Применяем адаптер к элементу spinner
                 String userlogin = login.getText().toString(); // получаем почту юзера
                 String userpassword = password.getText().toString(); // получаем пароль юзера
                 // проверяем на пустые поля
@@ -70,16 +108,17 @@ public class signup extends AppCompatActivity {
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
                 if (task.isSuccessful()) {
-                    String userclass = Class.getText().toString(); // получаем класс юзера
+                    String userclass = Class.getSelectedItem().toString() + ClassBukv.getSelectedItem().toString();
+                    System.out.println(userclass);
                     User newUser = new User(userclass); // формируем юзера
                     FirebaseDatabase.getInstance().getReference("Users").child(FirebaseAuth.getInstance().getCurrentUser().getUid()).setValue(newUser); // добавляем юзера в БД под тем же ключом, под каким проходила регистрация
                     Toast.makeText(signup.this, "Регистрация успешна", Toast.LENGTH_SHORT).show(); // тост с информацией по регистрации
                     check.setUserName(signup.this, login.toString()); // добавляем юзера в базу телефона, чтобы постоянно не вводить почту и пароль
-                    check.setClass(signup.this, Class.getText().toString());
                 } else {
                     Toast.makeText(signup.this, "Регистрация провалена", Toast.LENGTH_SHORT).show(); // тост с информацией по регистрации
                 }
             }
         });
     }
+
 }
