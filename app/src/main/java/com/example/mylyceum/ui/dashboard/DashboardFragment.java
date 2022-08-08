@@ -6,12 +6,14 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.Button;
 import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
 import android.widget.TabHost;
+import android.widget.TextView;
 
 
 import java.text.SimpleDateFormat;
@@ -55,7 +57,8 @@ public class DashboardFragment extends Fragment {
         String day_of_week = formatForDateNow.format(d);
         System.out.println(day_of_week);
         FrameLayout tabcontent = binding.tabcontent;
-        System.out.println(tabcontent.getHeight());
+
+
 
 
 //        Date date = new Date();
@@ -98,6 +101,27 @@ public class DashboardFragment extends Fragment {
         tabSpec.setContent(R.id.linearLayout6);
         tabSpec.setIndicator("сб");
         tabHost.addTab(tabSpec);
+
+        ViewTreeObserver vto = tabcontent.getViewTreeObserver();
+        vto.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            public boolean onPreDraw() {
+                tabcontent.getViewTreeObserver().removeOnPreDrawListener(this);
+
+                int finalHeight = tabcontent.getMeasuredHeight();
+                finalHeight -= 154;
+                ViewGroup.LayoutParams params = tabcontent.getLayoutParams();
+                params.height = finalHeight;
+
+                tabcontent.setLayoutParams(params);
+
+                return true;
+            }
+        });
+
+
+
+
+
 
         switch (day_of_week) {
             case "Mon":

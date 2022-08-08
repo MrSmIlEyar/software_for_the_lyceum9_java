@@ -1,7 +1,9 @@
 package com.example.mylyceum;
 
 import android.os.Bundle;
+import android.view.ViewTreeObserver;
 import android.widget.ScrollView;
+import android.widget.TextView;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -32,6 +34,16 @@ public class main2 extends AppCompatActivity
         NavController navController = Navigation.findNavController(this, R.id.nav_host_fragment_activity_main2);
         NavigationUI.setupActionBarWithNavController(this, navController, appBarConfiguration);
         NavigationUI.setupWithNavController(binding.navView, navController);
+        ViewTreeObserver vto = navView.getViewTreeObserver();
+        vto.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            public boolean onPreDraw() {
+                navView.getViewTreeObserver().removeOnPreDrawListener(this);
+                int finalHeightbottom = navView.getMeasuredHeight();
+
+                System.out.println(finalHeightbottom);
+                return true;
+            }
+        });
     }
     @Override
     public void onBackPressed()
