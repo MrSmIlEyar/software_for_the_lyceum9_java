@@ -5,4 +5,58 @@
 
 
     android:layout_width="match_parent"
-    android:layout_height="match_parent"/>
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/linearLayout7"
+        android:layout_width="409dp"
+        android:layout_height="601dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/button5"
+            android:layout_width="237dp"
+            android:layout_height="48dp"
+            android:layout_marginTop="112dp"
+            android:text="Выйти из аккаунта"
+            android:textColor="#FFFFFF"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/vknot"
+            android:layout_width="237dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="62dp"
+            android:alpha="0.75"
+            android:autoLink="web"
+            android:autoText="false"
+            android:text="Вконтакте"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+        <Button
+            android:id="@+id/telegrem"
+            android:layout_width="237dp"
+            android:layout_height="48dp"
+            android:layout_marginBottom="118dp"
+            android:alpha="0.75"
+            android:autoLink="web"
+            android:text="Telegram"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

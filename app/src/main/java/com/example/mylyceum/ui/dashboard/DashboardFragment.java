@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.FrameLayout;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.ScrollView;
@@ -53,6 +54,8 @@ public class DashboardFragment extends Fragment {
 
         String day_of_week = formatForDateNow.format(d);
         System.out.println(day_of_week);
+        FrameLayout tabcontent = binding.tabcontent;
+        System.out.println(tabcontent.getHeight());
 
 
 //        Date date = new Date();

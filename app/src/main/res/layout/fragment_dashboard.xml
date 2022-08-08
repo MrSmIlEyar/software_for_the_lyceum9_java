@@ -305,8 +305,7 @@
                         <ScrollView
                             android:id="@+id/vt"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                        </ScrollView>
+                            android:layout_height="match_parent"></ScrollView>
 
                     </LinearLayout>
                 </LinearLayout>
@@ -316,16 +315,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:orientation="vertical">
+
                     <LinearLayout
                         android:id="@+id/tab3"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
+                        android:layout_height="match_parent">
 
                         <ScrollView
                             android:id="@+id/sr"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                        </ScrollView>
+                            android:layout_height="match_parent"></ScrollView>
                     </LinearLayout>
                 </LinearLayout>
 
@@ -338,15 +337,15 @@
                     <LinearLayout
                         android:id="@+id/tab4"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
+                        android:layout_height="match_parent">
 
                         <ScrollView
                             android:id="@+id/cht"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                        </ScrollView>
+                            android:layout_height="match_parent"></ScrollView>
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/linearLayout5"
                     android:layout_width="match_parent"
@@ -356,15 +355,15 @@
                     <LinearLayout
                         android:id="@+id/tab5"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
+                        android:layout_height="match_parent">
 
                         <ScrollView
                             android:id="@+id/pt"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                        </ScrollView>
+                            android:layout_height="match_parent"></ScrollView>
                     </LinearLayout>
                 </LinearLayout>
+
                 <LinearLayout
                     android:id="@+id/linearLayout6"
                     android:layout_width="match_parent"
@@ -374,13 +373,12 @@
                     <LinearLayout
                         android:id="@+id/tab6"
                         android:layout_width="match_parent"
-                        android:layout_height="match_parent" >
+                        android:layout_height="match_parent">
 
                         <ScrollView
                             android:id="@+id/sbt"
                             android:layout_width="match_parent"
-                            android:layout_height="match_parent">
-                        </ScrollView>
+                            android:layout_height="match_parent"></ScrollView>
 
                     </LinearLayout>
                 </LinearLayout>
