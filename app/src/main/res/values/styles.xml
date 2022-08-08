@@ -27,4 +27,7 @@
     <style name="TableRowStyle" parent="Theme.AppCompat.Light">
         <item name="android:padding">10sp</item>
     </style>
+    <style name="CardViewNews" parent="">
+        <item name="android:elevation">10dp</item>
+    </style>
 </resources>

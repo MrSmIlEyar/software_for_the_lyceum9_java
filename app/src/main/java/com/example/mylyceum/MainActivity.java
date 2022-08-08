@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        if (!(check.getUserName(MainActivity.this).length() == 0)) {
+        if (!(check.getUserName(MainActivity.this).length() == 0))
+        {
             Intent intent = new Intent(MainActivity.this, main2.class);
             startActivity(intent);
         }
@@ -61,12 +62,17 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void onClick(View view) {
-        if (view.getId() == R.id.entrance) {
+        if (view.getId() == R.id.entrance)
+        {
             signin(login.getText().toString(), password.getText().toString());
-        } else if (view.getId() == R.id.signup) {
+        }
+        else if (view.getId() == R.id.signup)
+        {
             Intent intent = new Intent(MainActivity.this, signup.class);
             startActivity(intent);
-        } else if (view.getId() == R.id.vk_link) {
+        }
+        else if (view.getId() == R.id.vk_link)
+        {
             Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://vk.com/pushkinisti"));
             startActivity(intent);
         }
@@ -79,21 +85,24 @@ public class MainActivity extends AppCompatActivity {
             ProgressDialog pg = ProgressDialog.show(MainActivity.this, "", "Выполняется вход...", true);
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful()) {
+                if (task.isSuccessful())
+                {
                     pg.dismiss();
                     check.setUserName(MainActivity.this, login.toString());
                     Toast.makeText(MainActivity.this, "Aвторизация успешна", Toast.LENGTH_SHORT).show();
                     Intent intent = new Intent(MainActivity.this, main2.class);
                     startActivity(intent);
-
                 }
-                else if (password.length() < 6) {
+                else if (password.length() < 6)
+                {
                     pg.dismiss();
                     Toast.makeText(MainActivity.this, "Длина пароля меньше 6 символов", Toast.LENGTH_SHORT).show();
                 }
-                else {
+                else
+                {
                     pg.dismiss();
-                    Toast.makeText(MainActivity.this, "Неверный логин или пароль", Toast.LENGTH_SHORT).show();}
+                    Toast.makeText(MainActivity.this, "Неверный логин или пароль", Toast.LENGTH_SHORT).show();
+                }
 
             }
         });

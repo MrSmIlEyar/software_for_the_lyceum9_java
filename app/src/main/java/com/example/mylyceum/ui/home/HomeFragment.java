@@ -1,30 +1,18 @@
 package com.example.mylyceum.ui.home;
 
-import androidx.annotation.ColorInt;
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.app.Activity;
-import android.graphics.Color;
-import android.icu.lang.UCharacter;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
-import android.widget.ScrollView;
 import android.widget.TextView;
-
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.mylyceum.R;
-import com.example.mylyceum.check;
 import com.example.mylyceum.databinding.FragmentHomeBinding;
-import com.example.mylyceum.main2.*;
-
 
 import java.util.ArrayList;
 
@@ -42,25 +30,23 @@ public class HomeFragment extends Fragment {
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
         LinearLayout linearLayout = binding.linearlayout;
+
         ArrayList<String> news = new ArrayList<>();
-        news.add("Я тут");
-        news.add("а нет я \n тут");
-        news.add("Я здеся");
+        news.add("Поздравляем всех с 1 сентября! Желаем, чтобы этот учебный год был не менее продуктивным, чем предыдущий, более насыщенным, ярким, уникальным!");
+        news.add("а нет я \n тут \n\n\n\n\n");
 
 //        Добавление карточек с новостями
         for (int i = 0; i < 100; i++) {
             TextView textView = new TextView(getContext());
             CardView card = new CardView(getContext());
-            card.setCardElevation(50);
-            int red = (int) (Math.random() * 200);
-            int blue = (int) (Math.random() * 200);
-            int green = (int) (Math.random() * 200);
             int index = (int) (Math.random() * 2);
             textView.setText(news.get(index));
-            textView.setTextColor(Color.rgb(0, 0, 0));
-            card.setCardBackgroundColor(Color.rgb(red, green, blue));
+            textView.setTextSize(20);
             card.addView(textView);
-            linearLayout.addView(card);
+            card.setCardElevation(12);
+            LinearLayout.LayoutParams card_news = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
+            card_news.setMargins(8,20,8,20);
+            linearLayout.addView(card, card_news);
         }
 
         return root;
@@ -68,7 +54,8 @@ public class HomeFragment extends Fragment {
     }
 
     @Override
-    public void onDestroyView() {
+    public void onDestroyView()
+    {
         super.onDestroyView();
         binding = null;
     }

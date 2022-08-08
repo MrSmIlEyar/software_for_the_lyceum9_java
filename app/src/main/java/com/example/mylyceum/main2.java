@@ -13,9 +13,10 @@ import androidx.navigation.ui.NavigationUI;
 
 import com.example.mylyceum.databinding.ActivityMain2Binding;
 
-public class main2 extends AppCompatActivity {
-
+public class main2 extends AppCompatActivity
+    {
     private ActivityMain2Binding binding;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
