@@ -4,7 +4,9 @@ import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.view.ViewTreeObserver;
 import android.widget.LinearLayout;
+import android.widget.ScrollView;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
@@ -35,6 +37,8 @@ public class HomeFragment extends Fragment {
         news.add("Поздравляем всех с 1 сентября! Желаем, чтобы этот учебный год был не менее продуктивным, чем предыдущий, более насыщенным, ярким, уникальным!");
         news.add("а нет я \n тут \n\n\n\n\n");
 
+
+
 //        Добавление карточек с новостями
         for (int i = 0; i < 100; i++) {
             TextView textView = new TextView(getContext());
@@ -48,10 +52,28 @@ public class HomeFragment extends Fragment {
             card_news.setMargins(8,20,8,20);
             linearLayout.addView(card, card_news);
         }
+        ScrollView scrollView = binding.scrollView;
+
+        ViewTreeObserver vto = scrollView.getViewTreeObserver();
+        vto.addOnPreDrawListener(new ViewTreeObserver.OnPreDrawListener() {
+            public boolean onPreDraw() {
+                scrollView.getViewTreeObserver().removeOnPreDrawListener(this);
+
+                int finalHeight = scrollView.getMeasuredHeight();
+                finalHeight -= 154;
+                ViewGroup.LayoutParams params = scrollView.getLayoutParams();
+                params.height = finalHeight;
+
+                scrollView.setLayoutParams(params);
+
+                return true;
+            }
+        });
 
         return root;
 
     }
+
 
     @Override
     public void onDestroyView()
