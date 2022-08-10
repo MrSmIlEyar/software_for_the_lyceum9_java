@@ -1,5 +1,6 @@
 package com.example.mylyceum.ui.home;
 
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,10 +47,11 @@ public class HomeFragment extends Fragment {
             int index = (int) (Math.random() * 2);
             textView.setText(news.get(index));
             textView.setTextSize(20);
+            textView.setTextColor(Color.rgb(0, 0, 0));
             card.addView(textView);
             card.setCardElevation(12);
             LinearLayout.LayoutParams card_news = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            card_news.setMargins(8,20,8,20);
+            card_news.setMargins(5,50,5,50);
             linearLayout.addView(card, card_news);
         }
         ScrollView scrollView = binding.scrollView;
