@@ -1,6 +1,7 @@
 package com.example.mylyceum.ui.home;
 
 import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,6 +47,7 @@ public class HomeFragment extends Fragment {
             CardView card = new CardView(getContext());
             int index = (int) (Math.random() * 2);
             textView.setText(news.get(index));
+            textView.setTypeface(Typeface.SANS_SERIF);
             textView.setTextSize(20);
             textView.setTextColor(Color.rgb(0, 0, 0));
             card.addView(textView);

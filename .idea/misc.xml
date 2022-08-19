@@ -23,7 +23,7 @@
         <entry key="..\:/Users/belov/AndroidStudioProjects/software_for_the_lyceum9_java/app/src/main/res/layout/fragment_add_board.xml" value="0.16055045871559634" />
         <entry key="..\:/Users/belov/AndroidStudioProjects/software_for_the_lyceum9_java/app/src/main/res/layout/fragment_dashboard.xml" value="0.2" />
         <entry key="..\:/Users/belov/AndroidStudioProjects/software_for_the_lyceum9_java/app/src/main/res/layout/fragment_home.xml" value="0.264" />
-        <entry key="..\:/Users/belov/AndroidStudioProjects/software_for_the_lyceum9_java/app/src/main/res/layout/fragment_notifications.xml" value="0.2" />
+        <entry key="..\:/Users/belov/AndroidStudioProjects/software_for_the_lyceum9_java/app/src/main/res/layout/fragment_notifications.xml" value="0.264" />
         <entry key="..\:/Users/belov/AndroidStudioProjects/software_for_the_lyceum9_java/app/src/main/res/layout/probably.xml" value="0.264" />
         <entry key="..\:/Users/belov/AndroidStudioProjects/software_for_the_lyceum9_java/app/src/main/res/menu/bottom_nav_menu.xml" value="0.2359375" />
       </map>
@@ -34,5 +34,12 @@
   </component>
   <component name="ProjectType">
     <option name="id" value="Android" />
+  </component>
+  <component name="VisualizationToolProject">
+    <option name="state">
+      <ProjectState>
+        <option name="scale" value="0.264" />
+      </ProjectState>
+    </option>
   </component>
 </project>

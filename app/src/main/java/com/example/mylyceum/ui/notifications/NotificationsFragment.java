@@ -3,25 +3,25 @@ package com.example.mylyceum.ui.notifications;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
-import android.widget.Toast;
+import android.widget.SeekBar;
+import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
-import com.example.mylyceum.R;
 import com.example.mylyceum.databinding.FragmentNotificationsBinding;
-import com.example.mylyceum.main2;
-import com.example.mylyceum.signup;
+
+import java.text.BreakIterator;
 
 public class NotificationsFragment extends Fragment {
 
     private FragmentNotificationsBinding binding;
+    private BreakIterator textView;
 
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
@@ -46,6 +46,27 @@ public class NotificationsFragment extends Fragment {
                 startActivity(intent);
             }
         });
+        SeekBar seekBar = binding.seekBar;
+        TextView shrift = binding.editTextTextPersonName;
+
+        TextView textView = binding.textView;
+        seekBar.setOnSeekBarChangeListener(new SeekBar.OnSeekBarChangeListener() {
+            public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+
+                textView.setText(String.valueOf(seekBar.getProgress()));
+                shrift.setTextSize(seekBar.getProgress());
+            }
+
+            public void onStartTrackingTouch(SeekBar seekBar) {
+
+            }
+
+            public void onStopTrackingTouch(SeekBar seekBar) {
+
+            }
+        });
+
+
 
 
         return root;
@@ -56,6 +77,9 @@ public class NotificationsFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
+
+
+
 
 
 }
