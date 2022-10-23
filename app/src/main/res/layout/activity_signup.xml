@@ -44,10 +44,11 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="111dp"
-        android:layout_height="149dp"
-        android:layout_marginTop="16dp"
+        android:layout_width="144dp"
+        android:layout_height="196dp"
+        app:layout_constraintBottom_toTopOf="@+id/login_email"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/poet" />
@@ -84,7 +85,8 @@
         android:id="@+id/login_email"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="45sp"
+        android:layout_marginHorizontal="45dp"
+        android:layout_marginBottom="8dp"
         android:drawableLeft="@drawable/ic_email"
         android:hint=" Почта"
         android:inputType="textEmailAddress"
@@ -94,24 +96,22 @@
         android:textColor="#5A3D30"
         android:textSize="20sp"
         android:theme="@style/Theme.MyLyceum"
-        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintBottom_toTopOf="@+id/password_user"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.505"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.309">
+        app:layout_constraintHorizontal_bias="0.359"
+        app:layout_constraintStart_toStartOf="parent">
 
     </EditText>
 
     <EditText
         android:id="@+id/password_user"
+        style="@style/Theme.MyLyceum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="45sp"
+        android:layout_marginHorizontal="45dp"
         android:drawableLeft="@drawable/ic_password"
-
         android:hint=" Пароль"
-
+        android:inputType="textPassword"
         android:maxLength="15"
         android:textColor="#5A3D30"
         android:textSize="20sp"
@@ -124,29 +124,42 @@
 
     </EditText>
 
-    <LinearLayout
-        android:layout_width="300dp"
-        android:layout_height="95dp"
-        android:orientation="horizontal"
-        app:layout_constraintBottom_toTopOf="@+id/signup"
+    <TextView
+        android:id="@+id/textViewSelectClass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Выберите класс"
+        android:textColor="#5A3D30"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password_user">
+        app:layout_constraintTop_toBottomOf="@+id/password_user" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout8"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginHorizontal="45dp"
+        android:layout_marginTop="8dp"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSelectClass">
 
         <Spinner
             android:id="@+id/class_numb"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/class_number"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:entries="@array/class_number" />
 
         <Spinner
             android:id="@+id/class_bukv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:entries="@array/nachal_class"
-            android:layout_weight="1" />
+            android:layout_weight="1"
+            android:entries="@array/nachal_class" />
     </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
