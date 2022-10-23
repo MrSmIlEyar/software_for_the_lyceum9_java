@@ -3,6 +3,7 @@ package com.example.mylyceum.ui.home;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -17,15 +18,22 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
 import com.example.mylyceum.databinding.FragmentHomeBinding;
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.annotations.Nullable;
 
 import java.util.ArrayList;
 
 public class HomeFragment extends Fragment {
     private int chet;
-
+    private DatabaseReference mDatabase;
 
     private FragmentHomeBinding binding;
 
+    
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         HomeViewModel homeViewModel =
@@ -33,13 +41,12 @@ public class HomeFragment extends Fragment {
         chet = 0;
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
+        mDatabase = FirebaseDatabase.getInstance().getReference();
         LinearLayout linearLayout = binding.linearlayout;
 
         ArrayList<String> news = new ArrayList<>();
         news.add("Поздравляем всех с 1 сентября! Желаем, чтобы этот учебный год был не менее продуктивным, чем предыдущий, более насыщенным, ярким, уникальным!");
         news.add("а нет я \n тут \n\n\n\n\n");
-
-
 
 //        Добавление карточек с новостями
         for (int i = 0; i < 100; i++) {
@@ -51,9 +58,9 @@ public class HomeFragment extends Fragment {
             textView.setTextSize(20);
             textView.setTextColor(Color.rgb(0, 0, 0));
             card.addView(textView);
-            card.setCardElevation(12);
+            card.setCardElevation(50);
             LinearLayout.LayoutParams card_news = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.WRAP_CONTENT);
-            card_news.setMargins(5,50,5,50);
+            card_news.setMargins(0, 25, 0, 25);
             linearLayout.addView(card, card_news);
         }
         ScrollView scrollView = binding.scrollView;
@@ -77,11 +84,8 @@ public class HomeFragment extends Fragment {
         return root;
 
     }
-
-
     @Override
-    public void onDestroyView()
-    {
+    public void onDestroyView() {
         super.onDestroyView();
         binding = null;
     }
