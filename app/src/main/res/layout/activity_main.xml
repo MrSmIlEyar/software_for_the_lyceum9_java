@@ -48,7 +48,7 @@
         android:id="@+id/entrance"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="95sp"
+        android:layout_marginHorizontal="95dp"
         android:layout_marginTop="24dp"
         android:text="Вход"
         android:textColor="#5A3D30"
@@ -61,9 +61,9 @@
 
     <ImageView
         android:id="@+id/imageView"
-        android:layout_width="111dp"
-        android:layout_height="149dp"
-        android:layout_marginTop="20dp"
+        android:layout_width="144dp"
+        android:layout_height="196dp"
+        app:layout_constraintBottom_toTopOf="@+id/login"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -75,7 +75,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="cursive"
-        android:text="2022 "
+        android:text="2022"
         android:textSize="20sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -103,9 +103,8 @@
         android:id="@+id/login"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="45sp"
-        android:layout_marginTop="7dp"
-        android:layout_marginBottom="1dp"
+        android:layout_marginHorizontal="45dp"
+        android:layout_marginBottom="8dp"
         android:drawableLeft="@drawable/ic_email"
         android:hint=" Почта"
         android:inputType="textEmailAddress"
@@ -118,9 +117,7 @@
         app:layout_constraintBottom_toTopOf="@+id/password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.359"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imageView"
-        app:layout_constraintVertical_bias="0.041">
+        app:layout_constraintStart_toStartOf="parent">
 
     </EditText>
 
@@ -129,7 +126,7 @@
         style="@style/Theme.MyLyceum"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginHorizontal="45sp"
+        android:layout_marginHorizontal="45dp"
         android:drawableLeft="@drawable/ic_password"
         android:hint=" Пароль"
         android:inputType="textPassword"
