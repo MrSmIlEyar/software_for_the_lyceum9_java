@@ -58,15 +58,15 @@
                                         android:id="@+id/carder2"
                                         style="@style/MyCardViewStyle"
                                         android:layout_width="match_parent"
-                                        android:layout_height="150sp"
+                                        android:layout_height="150dp"
                                         android:layout_gravity="center"
                                         android:layout_marginHorizontal="16dp"
                                         android:layout_marginVertical="16dp"
                                         app:cardCornerRadius="4dp"
-                                        app:contentPaddingBottom="0sp"
-                                        app:contentPaddingLeft="0sp"
-                                        app:contentPaddingRight="0sp"
-                                        app:contentPaddingTop="0sp"
+                                        app:contentPaddingBottom="0dp"
+                                        app:contentPaddingLeft="0dp"
+                                        app:contentPaddingRight="0dp"
+                                        app:contentPaddingTop="0dp"
                                         app:layout_constraintBottom_toBottomOf="parent"
                                         tools:layout_editor_absoluteX="16dp">
 
@@ -78,7 +78,7 @@
                                             <TextView
                                                 android:id="@+id/timer2"
                                                 style="@style/LeftTextViewStyle"
-                                                android:layout_width="150sp"
+                                                android:layout_width="150dp"
                                                 android:layout_height="match_parent"
                                                 android:gravity="center"
                                                 android:text="8.00\n-\n8.45" />
@@ -87,10 +87,10 @@
                                                 android:id="@+id/subject2"
                                                 style="@style/RightTextViewStyle"
                                                 android:layout_width="match_parent"
-                                                android:layout_height="75sp"
+                                                android:layout_height="75dp"
                                                 android:layout_toRightOf="@+id/timer2"
                                                 android:gravity="center_horizontal"
-                                                android:paddingTop="40sp"
+                                                android:paddingTop="40dp"
                                                 android:text="Алгебра" />
 
                                             <TextView
