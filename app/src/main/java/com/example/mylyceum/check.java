@@ -36,4 +36,10 @@ public class check
     public static String getUserClass(Context ctx) {
         return getSharedPreferences(ctx).getString(PREF_USER_CLASS, "");
     }
+
+    public static void removeUserName(Context ctx) {
+        SharedPreferences.Editor editor = getSharedPreferences(ctx).edit();
+        editor.remove(PREF_USER_NAME);
+        editor.commit();
+    }
 }
