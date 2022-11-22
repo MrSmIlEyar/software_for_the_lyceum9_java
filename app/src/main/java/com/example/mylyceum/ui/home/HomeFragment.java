@@ -21,8 +21,10 @@ import com.example.mylyceum.databinding.FragmentHomeBinding;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.annotations.Nullable;
 
 import java.util.ArrayList;
@@ -47,7 +49,6 @@ public class HomeFragment extends Fragment {
         ArrayList<String> news = new ArrayList<>();
         news.add("Поздравляем всех с 1 сентября! Желаем, чтобы этот учебный год был не менее продуктивным, чем предыдущий, более насыщенным, ярким, уникальным!");
         news.add("а нет я \n тут \n\n\n\n\n");
-
 //        Добавление карточек с новостями
         for (int i = 0; i < 100; i++) {
             TextView textView = new TextView(getContext());
@@ -89,6 +90,8 @@ public class HomeFragment extends Fragment {
         super.onDestroyView();
         binding = null;
     }
-
+    
+    
+    
 }
 

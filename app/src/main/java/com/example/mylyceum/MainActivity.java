@@ -64,7 +64,9 @@ public class MainActivity extends AppCompatActivity {
     public void onClick(View view) {
         if (view.getId() == R.id.entrance)
         {
-            signin(login.getText().toString(), password.getText().toString());
+            if (login.getText().length() != 0 && password.getText().length() != 0) {
+                signin(login.getText().toString(), password.getText().toString());
+            }
         }
         else if (view.getId() == R.id.signup)
         {
@@ -85,7 +87,7 @@ public class MainActivity extends AppCompatActivity {
             ProgressDialog pg = ProgressDialog.show(MainActivity.this, "", "Выполняется вход...", true);
             @Override
             public void onComplete(@NonNull Task<AuthResult> task) {
-                if (task.isSuccessful())
+                if (task.isSuccessful() && password != null && email != null)
                 {
                     pg.dismiss();
                     check.setUserName(MainActivity.this, login.toString());
