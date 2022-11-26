@@ -1,5 +1,7 @@
 package com.example.mylyceum.ui.home;
 
+import static android.content.ContentValues.TAG;
+
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -28,14 +30,16 @@ import com.google.firebase.database.ValueEventListener;
 import com.google.firebase.database.annotations.Nullable;
 
 import java.util.ArrayList;
+import java.util.Objects;
 
 public class HomeFragment extends Fragment {
     private int chet;
-    private DatabaseReference mDatabase;
+    private DatabaseReference myRef;
+    private ArrayList<String> news = new ArrayList<>();
 
     private FragmentHomeBinding binding;
 
-    
+
     public View onCreateView(@NonNull LayoutInflater inflater,
                              ViewGroup container, Bundle savedInstanceState) {
         HomeViewModel homeViewModel =
@@ -43,18 +47,36 @@ public class HomeFragment extends Fragment {
         chet = 0;
         binding = FragmentHomeBinding.inflate(inflater, container, false);
         View root = binding.getRoot();
-        mDatabase = FirebaseDatabase.getInstance().getReference();
+        myRef = FirebaseDatabase.getInstance().getReference();
+//        for (int i = 0; i < 5; i++) {
+////            myRef..setValue("Ярик почему не смержил");
+//            myRef.child(i + "").setValue(i);
+//        }
+
+        myRef.getRoot().addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot childDataSnapshot : dataSnapshot.child("News").getChildren()) {
+                    news.add(childDataSnapshot.getValue().toString());
+                    System.out.println(childDataSnapshot.getKey() + " " + childDataSnapshot.getValue());
+                }
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+
+            }
+        });
+
+
+//        System.out.println(myRef.get());
         LinearLayout linearLayout = binding.linearlayout;
 
-        ArrayList<String> news = new ArrayList<>();
-        news.add("Поздравляем всех с 1 сентября! Желаем, чтобы этот учебный год был не менее продуктивным, чем предыдущий, более насыщенным, ярким, уникальным!");
-        news.add("а нет я \n тут \n\n\n\n\n");
 //        Добавление карточек с новостями
-        for (int i = 0; i < 100; i++) {
+        for (int i = 0; i < news.size(); i++) {
             TextView textView = new TextView(getContext());
             CardView card = new CardView(getContext());
-            int index = (int) (Math.random() * 2);
-            textView.setText(news.get(index));
+            textView.setText(news.get(i));
             textView.setTypeface(Typeface.SANS_SERIF);
             textView.setTextSize(20);
             textView.setTextColor(Color.rgb(0, 0, 0));
