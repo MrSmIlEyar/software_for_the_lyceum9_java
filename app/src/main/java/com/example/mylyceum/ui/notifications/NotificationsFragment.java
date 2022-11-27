@@ -14,7 +14,10 @@ import androidx.annotation.NonNull;
 import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 
+import com.example.mylyceum.MainActivity;
+import com.example.mylyceum.check;
 import com.example.mylyceum.databinding.FragmentNotificationsBinding;
+import com.example.mylyceum.main2;
 
 import java.text.BreakIterator;
 
@@ -32,6 +35,7 @@ public class NotificationsFragment extends Fragment {
         View root = binding.getRoot();
         Button vk = binding.vknot;
         Button tg = binding.telegrem;
+        Button exit = binding.accountExit;
         vk.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -43,6 +47,14 @@ public class NotificationsFragment extends Fragment {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("https://web.telegram.org/z/#-1731032322"));
+                startActivity(intent);
+            }
+        });
+        exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                check.removeUserName(getContext());
+                Intent intent = new Intent(getContext(), MainActivity.class);
                 startActivity(intent);
             }
         });

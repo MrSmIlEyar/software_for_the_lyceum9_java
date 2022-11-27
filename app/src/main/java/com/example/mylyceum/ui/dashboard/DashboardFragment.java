@@ -1,8 +1,13 @@
 package com.example.mylyceum.ui.dashboard;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.res.Resources;
 import android.graphics.Color;
 import android.os.Bundle;
+import android.util.AttributeSet;
+import android.util.TypedValue;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -28,12 +33,14 @@ import com.example.mylyceum.databinding.FragmentDashboardBinding;
 
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Objects;
 
 
 public class DashboardFragment extends Fragment {
     private FragmentDashboardBinding binding;
     private AddBoard addBoard;
     private Activity activity;
+    private static final int CARD_SIZE = 150;
 
     public static int getDayNumberOld(Date date) {
         Calendar cal = Calendar.getInstance();
@@ -59,27 +66,19 @@ public class DashboardFragment extends Fragment {
         FrameLayout tabcontent = binding.tabcontent;
 
 
-
-
 //        Date date = new Date();
 //        int day_of_week = getDayNumberOld(date) - 1;
         tabSpec.setContent(R.id.linearLayout);
         tabSpec.setIndicator("пн");
         tabHost.addTab(tabSpec);
 
-
-
-        LinearLayout linearLayout345 = binding.tab2;
-        linearLayout345.removeAllViews();
-        linearLayout345.addView(addDay("vt"));
-
-
+        ScrollView scrollView = binding.vt;
+        scrollView.addView(addDay("vt"));
         tabSpec = tabHost.newTabSpec("tag2");
         tabSpec.setContent(R.id.linearLayout2);
         LinearLayout linearLayout = binding.linearLayout2;
 //        linearLayout.addView(dashboard_add_board.getRelativeLayout("вт"));
         tabSpec.setIndicator("вт");
-
         tabHost.addTab(tabSpec);
 
         tabSpec = tabHost.newTabSpec("tag3");
@@ -119,10 +118,6 @@ public class DashboardFragment extends Fragment {
         });
 
 
-
-
-
-
         switch (day_of_week) {
             case "Mon":
                 tabHost.setCurrentTab(0);
@@ -160,26 +155,82 @@ public class DashboardFragment extends Fragment {
     private LinearLayout addDay(String day) {
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(
                 ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        LinearLayout relativeLayout = new LinearLayout(getContext());
-        relativeLayout.setLayoutParams(params);
+        LinearLayout linearLayout = new LinearLayout(getContext());
+        linearLayout.setLayoutParams(params);
+        linearLayout.setOrientation(LinearLayout.VERTICAL);
         for (int i = 0; i < 100; i++) {
             CardView cardView = new CardView(getContext());
-            CardView.LayoutParams params_2 = new CardView.LayoutParams(
-                    ViewGroup.LayoutParams.MATCH_PARENT, 150);
-            cardView.setLayoutParams(params_2);
+            CardView.LayoutParams cardParams = new CardView.LayoutParams(
+                    ViewGroup.LayoutParams.MATCH_PARENT, toPixels(CARD_SIZE));
+            cardParams.setMargins(toPixels(16), toPixels(16), toPixels(16), toPixels(16));
+            cardView.setLayoutParams(cardParams);
             cardView.setCardElevation(50);
-
-            int red = (int) (Math.random() * 200);
-            int blue = (int) (Math.random() * 200);
-            int green = (int) (Math.random() * 200);
-            cardView.setCardBackgroundColor(Color.rgb(red, green, blue));
-            relativeLayout.addView(cardView);
+//            int red = (int) (Math.random() * 200);
+//            int blue = (int) (Math.random() * 200);
+//            int green = (int) (Math.random() * 200);
+            cardView.setCardBackgroundColor(Color.WHITE);
+            cardView.addView(generateCard());
+            linearLayout.addView(cardView);
 
 
         }
 
-        return relativeLayout;
+        return linearLayout;
+    }
 
+    private RelativeLayout generateCard() {
+        RelativeLayout.LayoutParams params = new RelativeLayout.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        RelativeLayout relativeLayout = new RelativeLayout(getContext());
+        relativeLayout.setLayoutParams(params);
+
+        TextView timeTextView = new TextView(getContext());
+        ViewGroup.LayoutParams timeTextViewParams = new ViewGroup.LayoutParams(
+                toPixels(CARD_SIZE), ViewGroup.LayoutParams.MATCH_PARENT);
+        timeTextView.setLayoutParams(timeTextViewParams);
+        timeTextView.setGravity(Gravity.CENTER);
+        timeTextView.setTextSize(toPixels(9));
+        timeTextView.setTextColor(Color.parseColor("#FFFFFFFF"));
+        timeTextView.setBackgroundColor(Color.parseColor("#5A3D30"));
+        timeTextView.setText("8.00\n-\n8.45");
+
+        TextView upperTextView = new TextView(getContext());
+        ViewGroup.LayoutParams upperTextViewParams = new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        ViewGroup.MarginLayoutParams upperTextViewMarginParams = new ViewGroup.MarginLayoutParams(upperTextViewParams);
+        upperTextViewMarginParams.setMargins(toPixels(CARD_SIZE), 0, 0, toPixels((int) CARD_SIZE / 2));
+        upperTextView.setLayoutParams(upperTextViewMarginParams);
+        upperTextView.setGravity(Gravity.CENTER_HORIZONTAL);
+        upperTextView.setTextSize(toPixels(9));
+        upperTextView.setTextColor(Color.BLACK);
+        upperTextView.setPadding(0, toPixels(40), 0, 0);
+        upperTextView.setText("Алгебра");
+
+        TextView bottomTextView = new TextView(getContext());
+        ViewGroup.LayoutParams bottomTextViewParams = new ViewGroup.LayoutParams(
+                ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+        ViewGroup.MarginLayoutParams bottomTextViewMarginParams = new ViewGroup.MarginLayoutParams(bottomTextViewParams);
+        bottomTextViewMarginParams.setMargins(toPixels(CARD_SIZE), toPixels((int) CARD_SIZE / 2), 0, 0);
+        bottomTextView.setLayoutParams(bottomTextViewMarginParams);
+        bottomTextView.setGravity(Gravity.CENTER_HORIZONTAL);
+        bottomTextView.setTextSize(toPixels(6));
+        bottomTextView.setPadding(0, toPixels(10), 0, 0);
+        bottomTextView.setText("Кабинет 303");
+
+        relativeLayout.addView(bottomTextView);
+        relativeLayout.addView(timeTextView);
+        relativeLayout.addView(upperTextView);
+
+        return relativeLayout;
+    }
+
+    private int toPixels(int dp) {
+        Resources r = getContext().getResources();
+        return (int) TypedValue.applyDimension(
+                TypedValue.COMPLEX_UNIT_DIP,
+                dp,
+                r.getDisplayMetrics()
+        );
     }
 }
 
