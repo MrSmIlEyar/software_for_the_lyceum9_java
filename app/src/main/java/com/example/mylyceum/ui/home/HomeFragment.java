@@ -33,20 +33,14 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 public class HomeFragment extends Fragment {
-    private int chet;
     private DatabaseReference myRef;
     private ArrayList<String> news = new ArrayList<>();
 
     private FragmentHomeBinding binding;
 
-
-    public View onCreateView(@NonNull LayoutInflater inflater,
-                             ViewGroup container, Bundle savedInstanceState) {
-        HomeViewModel homeViewModel =
-                new ViewModelProvider(this).get(HomeViewModel.class);
-        chet = 0;
-        binding = FragmentHomeBinding.inflate(inflater, container, false);
-        View root = binding.getRoot();
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        System.out.println("ОНО ЖИВОЕ");
         myRef = FirebaseDatabase.getInstance().getReference();
 //        for (int i = 0; i < 5; i++) {
 ////            myRef..setValue("Ярик почему не смержил");
@@ -58,7 +52,7 @@ public class HomeFragment extends Fragment {
             public void onDataChange(DataSnapshot dataSnapshot) {
                 for (DataSnapshot childDataSnapshot : dataSnapshot.child("News").getChildren()) {
                     news.add(childDataSnapshot.getValue().toString());
-                    System.out.println(childDataSnapshot.getKey() + " " + childDataSnapshot.getValue());
+                   Log.d("NewsGetting", childDataSnapshot.getKey() + " " + childDataSnapshot.getValue());
                 }
             }
 
@@ -67,16 +61,28 @@ public class HomeFragment extends Fragment {
 
             }
         });
+        this.news = news;
+    }
 
 
-//        System.out.println(myRef.get());
+    public View onCreateView(@NonNull LayoutInflater inflater,
+                             ViewGroup container, Bundle savedInstanceState) {
+        HomeViewModel homeViewModel =
+                new ViewModelProvider(this).get(HomeViewModel.class);
+        binding = FragmentHomeBinding.inflate(inflater, container, false);
+        View root = binding.getRoot();
+//        myRef = FirebaseDatabase.getInstance().getReference();
+////        for (int i = 0; i < 5; i++) {
+//////            myRef..setValue("Ярик почему не смержил");
+////            myRef.child(i + "").setValue(i);
+////        }
         LinearLayout linearLayout = binding.linearlayout;
 
 //        Добавление карточек с новостями
-        for (int i = 0; i < news.size(); i++) {
+        for (int i = 0; i < this.news.size(); i++) {
             TextView textView = new TextView(getContext());
             CardView card = new CardView(getContext());
-            textView.setText(news.get(i));
+            textView.setText(this.news.get(i));
             textView.setTypeface(Typeface.SANS_SERIF);
             textView.setTextSize(20);
             textView.setTextColor(Color.rgb(0, 0, 0));
@@ -86,6 +92,8 @@ public class HomeFragment extends Fragment {
             card_news.setMargins(0, 25, 0, 25);
             linearLayout.addView(card, card_news);
         }
+        Log.d("CreateNewsCard", "Карточки с новостями созданы");
+        Log.d("CreateNewsCard", this.news.size() + "");
         ScrollView scrollView = binding.scrollView;
 
         ViewTreeObserver vto = scrollView.getViewTreeObserver();
